@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PanaPaca · Panadería Artesanal</title>
+    
+    <!-- Fuentes -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ranchers&display=swap" rel="stylesheet">
+    
+    <!-- CSS de AOS (Librería JS adicional) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <!-- fin jquery -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              verde: '#BBC54F',
+              amarillo: '#FFFB86',
+              crema: '#F6F3DF',
+              cremaclaro: '#FFFEF5',
+              marronoscuro: '#2A1810',
+              marronclaro: '#AA7F4E',
+              marron: '#422504',
+            },
+            fontFamily: {
+              titulo: ['Ranchers', 'cursive'],
+              subtitulo: ['"PlayFair Display"', 'serif'],
+              texto: ['Bricolage Grotesque', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-stone-100 text-stone-800 font-texto dark:text-amber-100/90 transition-colors duration-300 ease-out">
+
+    <!-- Header -->
+    <header class="bg-[url(/img/HERO_08.jpg)] bg-cover bg-no-repeat bg-fixed dark:bg-[url(/img/HERO_08.jpg)] transition-all duration-300 ease-out">
+        
+
+        
+        <nav aria-label="Navegación principal" class="max-w-5xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            
+    
+            
+            <div class="w-full md:w-auto flex justify-between items-center">
+                <a href="#" class="font-titulo dark:text-crema text-3xl font-bold tracking-wide text-amarillo hover:rotate-6 , hover:scale-110  transition-opacity duration-300 ease-out">PanaPaca</a>
+                <!-- Botón menú móvil -->
+                <button id="boton-menu" aria-expanded="false" class="md:hidden px-3 py-1 bg-amarillo text-marron rounded dark:bg-marron dark:text-crema dark:hover:bg-crema dark:hover:text-marron hover:bg-crema hover:text-marron font-texto text-sm transition-all duration-300 ease-out">
+                    Menú
+                </button>
+
+                
+            </div>
+            
+            <!-- Menú navegación -->
+            <ul id="menu" class="hidden md:flex flex-col md:flex-row gap-4 text-xs tracking-tight font-semibold text-crema">
+                <li><a href="#productos" class="hover:text-amarillo hover:underline transition-colors duration-300 ease-out">Nuestros Panes</a></li>
+                <li><a href="#novedades" class="hover:text-amarillo hover:underline transition-colors duration-300 ease-out">Novedades</a></li>
+                <li><a href="#horario" class="hover:text-amarillo hover:underline transition-colors duration-300 ease-out">Horario</a></li>
+                <li><a href="#contacto" class="hover:text-amarillo hover:underline transition-colors duration-300 ease-out">Contacto</a></li>
+            </ul>
+            
+ 
+
+            <!-- Botón modo oscuro -->
+            <button id="boton-tema" aria-pressed="false" class="text-xs font-semibold px-3 py-1 bg-amarillo text-marron rounded text-crema hover:bg-crema hover:text-marron dark:bg-marron dark:text-crema dark:hover:bg-crema dark:hover:text-marron transition-all duration-300 ease-out">
+                ⏾ Modo oscuro
+            </button>
+
+        </nav>
+
+        <!-- Sección principal -->
+
+    <section class=" transition-all duration-300 ease-out">
+        <div class="max-w-4xl mx-auto px-6 py-36 text-center">
+                            <h1 data-aos="fade-up" data-aos-delay="300" class="mt-3 font-subtitulo text-4xl md:text-6xl font-bold tracking-tight text-crema dark:text-crema">El arte de hacer las cosas <span class="italic text-amarillo dark:text-marronclaro">bien,</span> desde el primer ingrediente.</h1>
+            <p data-aos="fade-up" data-aos-delay="500" class="mt-6 max-w-xl mx-auto text-crema dark:text-crema text-base">
+                Panadería y pastelería artesanal. Elaboramos cada día con buenos ingredientes y mucho mimo
+            </p>
+            <!-- Botón de horario -->
+            <a data-aos="fade-up" data-aos-delay="700" href="#horario" class="inline-block mt-8 px-6 py-1 bg-amarillo font-semibold text-marron rounded text-crema hover:bg-crema hover:text-marron dark:bg-marron dark:text-crema dark:hover:bg-crema dark:hover:text-marron transition-all duration-300 ease-out">Ver horario</a>
+        </div>
+    
+        </section>
+
+            <div class="marquee bg-amarillo dark:bg-marronclaro font-texto text-marron dark:text-crema text-3xl uppercase">
+                <ul class="marquee__content">
+                    <li>Pan del bueno</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Hecho con cariño</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Recién horneado</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Pan del bueno</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Hecho con cariño</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Recién horneado</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                 </ul>
+                <ul class="marquee__content" aria-hidden="true">
+                    <li>Pan del bueno</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Hecho con cariño</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Recién horneado</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Pan del bueno</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Hecho con cariño</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                    <li>Recién horneado</li>
+                    <li class="marquee__sep" aria-hidden="true">•</li>
+                </ul>
+            </div>
+
+
+    </header>
+
+        <main>
+
+
+        <!-- Productos -->
+        <section id="productos" class="bg-crema dark:bg-marronoscuro py-16 transition-all duration-300 ease-out">
+            <div class="max-w-5xl mx-auto px-6">
+                <h2 class="mb-2 font-titulo text-5xl/10 md:text-5xl/10 font-bold text-center text-marron dark:text-crema">Nuestra selección</h2>
+                <p class="font-subtitulo text-2xl md:text-xl text-center text-marron dark:text-crema">Recién salido del horno</p>
+
+        <!-- GRID -->
+        <section class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+
+        <!-- CARD 1 -->
+        <div data-aos="fade-up" data-aos-delay="300" class="w-72 bg-cremaclaro dark:bg-crema shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            <a href="#">
+            <img src="img/variedad_pan.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+                <span class="text-marron mr-3 font-titulo text-2xl">Pan Artesanal</span>
+                <p class="mt-2 text-xs/4 font-text text-marron"><span class="font-bold">Una amplia variedad de panes elaborados a diario:</span> hogaza de masa madre y centeno, barra candeal, pan integral...</p>
+                <div class="flex items-center">
+                <p class="text-lg font-text text-marron  cursor-auto my-2">Desde 3€/u</p>
+                <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="color-marron" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <!-- CARD 2 -->
+        <div data-aos="fade-up" data-aos-delay="500" class="w-72 bg-cremaclaro dark:bg-crema shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            <a href="#">
+            <img src="img/empanadas.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+                <span class="text-marron mr-3 font-titulo text-2xl">Clásicos salados</span>
+                <p class="mt-2 text-xs/4 font-text text-marron"><span class="font-bold">Una selección de opciones saladas para empezar el día:</span> empanadas, tostadas, ¡Y mucho más!</p>
+                <div class="flex items-center">
+                <p class="text-lg font-text text-marron cursor-auto my-2">Desde 1,50€/u</p>
+                <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="color-marron" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <!-- CARD 3 -->
+        <div data-aos="fade-up" data-aos-delay="700" class="w-72 bg-cremaclaro dark:bg-crema shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            <a href="#">
+            <img src="img/palmeritas.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+                <span class="text-marron mr-3 font-titulo text-2xl">Repostería tradicional</span>
+                <p class="mt-2 text-xs/4 font-text text-marron"><span class="font-bold">Recetas de la abuela horneadas cada mañana:</span> desde croissants hasta magdalenas.</p>
+                <div class="flex items-center">
+                <p class="text-lg font-text text-marron cursor-auto my-2">Todo a 2€/u</p>
+                <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="color-marron" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <!-- CARD 4 -->
+        <div data-aos="fade-up" data-aos-delay="900" class="w-72 bg-cremaclaro dark:bg-crema shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            <a href="#">
+            <img src="img/eventos-mini.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+                <span class="text-marron mr-3 font-titulo text-2xl">Especialidades</span>
+                <p class="mt-2 text-xs/4 font-text text-marron"><span class="font-bold"> Mini tartas, pies y tartaletas</span> elaboradas para endulzar tus celebraciones.</p>
+                <div class="flex items-center">
+                <p class="text-lg font-text text-marron cursor-auto my-2">Consultar precios</p>
+                <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="color-marron" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <!-- CARD 5 -->
+        <div data-aos="fade-up" data-aos-delay="1000" class="w-72 bg-cremaclaro dark:bg-crema shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            <a href="#">
+            <img src="img/sin-gluten.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+                <span class="text-marron mr-3 font-titulo text-2xl">Especialidades sin gluten</span>
+                <p class="mt-2 text-xs/4 font-text text-marron">Una selección de productos libres de gluten.</p>
+                <div class="flex items-center">
+                <p class="text-lg font-text text-marron  cursor-auto my-2">Desde 3€/u</p>
+                <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="color-marron" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+
+        <!-- CARD 6 -->
+        <div data-aos="fade-up" data-aos-delay="1100" class="w-72 bg-cremaclaro dark:bg-crema shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            <a href="#">
+            <img src="img/dulces-veganos.jpg" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+            <div class="px-4 py-3 w-72">
+                <span class="text-marron mr-3 font-titulo text-2xl">Dulces veganos</span>
+                <p class="mt-2 text-xs/4 font-text text-marron"><span class="font-bold">Repostería artesanal </span> elaborada con ingredientes vegetales..</p>
+                <div class="flex items-center">
+                <p class="text-lg font-text text-marron  cursor-auto my-2">Desde 3€/u</p>
+                <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="color-marron" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                    </svg></div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+            </div>
+        </section>
+
+        <!-- Sección novedades -->
+        <section id="novedades" class="pb-30 bg-crema dark:bg-marronoscuro py-12 transition-all duration-300 ease-out">
+            <div class="max-w-5xl mx-auto px-6">
+                <div data-aos="flip-left" class="p-8 rounded-3xl bg-amarillo dark:bg-crema border-amber-300 shadow-md text-center text-marron transition-all duration-300 ease-out hover:shadow-lg">
+                    <span class="inline-block px-5 py-1.5 mb-3 bg-cremaclaro dark:bg-marronoscuro text-marron dark:text-crema font-bold text-xs uppercase tracking-widest rounded-full shadow-sm">
+                        Novedad de la semana
+                    </span>
+                    <h2 class="mt-2 font-titulo text-3xl md:text-5xl font-bold text-marron dark:text-marronclaro mb-2">
+                        Pan de Masa Madre con Nueces y Pasas
+                    </h2>
+                    <h3 class="font-subtitulo text-lg md:text-xl text-center text-marron dark:text-marron">Solo pedido bajo encargo</h3>
+
+                    <p class="mt-6 max-w-xl mx-auto text-marron dark:text-marron text-base">
+                        Horneado únicamente los viernes y sábados, ¡No te olvides de encargarlo con antelación!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Counter -->
+         <div class="counter-up">
+            <div class="content">
+                <div class="box">
+                    <div class="icon"><i data-feather="clock"></i></div>
+                    <div class="counter">41</div>
+                    <div class="text">años de tradición</div>
+                </div>
+
+                <div class="box">
+                    <div class="icon"><i data-feather="heart"></i></div>
+                    <div class="counter">1000</div>
+                    <div class="text">clientes satisfechos</div>
+                </div>
+
+                <div class="box">
+                    <div class="icon"><i data-feather="gift"></i></div>
+                    <div class="counter">300</div>
+                    <div class="text">celebraciones atendidas</div>
+                </div>
+
+                <div class="box">
+                    <div class="icon"><i data-feather="smile"></i></div>
+                    <div class="counter">5000</div>
+                    <div class="text">panes horneados</div>
+                </div>
+
+            </div>
+         </div>
+
+        <!-- Reseñas clientes -->
+        <section class="bg-amarillo dark:bg-marronoscuro pt-8 pb-8 from-slate-200 to-slate-50  text-slate-800 flex flex-col justify-center items-center min-h-96 relative px-4">
+        <section data-aos="fade-up" data-aos-delay="300" class="bg-cremaclaro dark:bg-crema my-4 w-full max-w-2xl rounded-3xl text-center p-8 sm:p-16 [&_*]:ease-in-out">
+            <h1 class="text-marron dark:text-marronclaro text-5xl font-titulo">Lo que dicen de nosotras</h1>
+            <p class="font-subtitulo text-xl mt-2 text-marron dark:text-marronoscuro mb-10">Vuestras palabras son el mejor ingrediente de nuestro trabajo.</p>
+
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-[60px_auto_60px] [grid-template-areas:'slider_slider'_'nav-left_nav-right'] sm:[grid-template-areas:'nav-left_slider_nav-right'] gap-2 sm:gap-6
+                [&>button]:rounded-full
+                [&>button]:w-10
+                [&>button]:h-10
+                [&>button]:shrink-0
+                [&>button]:text-gray-600
+                [&>button]:text-2xl
+                [&>button]:transition-all 
+                [&>button]:duration-500
+                [&_button]:relative
+                [&_button]:isolate
+                [&_button]:bg-marron
+                sm:[&>button]:mt-8
+                before:[&>button]:absolute
+                before:[&>button]:inset-px
+                before:[&>button]:transition-all
+                before:[&>button]:duration-300
+                before:[&>button]:-z-10 
+                before:[&>button]:rounded-full
+                hover:before:[&>button]:inset-full
+                before:[&>button]:bg-cremaclaro
+                hover:[&>button]:text-white
+                hover:[&>button]:bg-marron
+                hover:[&>button]:border-amarillo
+            ">
+                <button data-slide="prev" class="[grid-area:nav-left] material-symbols-outlined">←</button>
+                <div id="slider" class="[grid-area:slider]">
+                    <div id="list-cards" class="grid [grid-template-areas:'stack'] overflow-hidden ">
+                    </div>
+                </div>
+                <button data-slide="next" class="[grid-area:nav-right] material-symbols-outlined ">→</button>
+            </div>
+        </section>
+    
+        <template id="tpl-card">
+            <div class="card [grid-area:stack] opacity-0">
+                <blockquote class="bg-amarillo dark:bg-crema font-texto text-marron rounded-md p-6 text-sm transition-all duration-500 scale-0 relative isolate
+                    before:absolute
+                    before:bg-amarillom
+                    before:w-4
+                    before:h-4
+                    before:rotate-45
+                    before:-bottom-2
+                    before:left-2/4
+                    before:-translate-x-2/4
+                    before:-z-10
+                    before:-translate-y-full
+                    before:transition
+                    before:duration-500
+                    before:delay-500
+                "></blockquote>
+                <div class="details text-sm translate-y-[150px] transition-all duration-500 flex flex-col items-center gap-2 mt-6">
+                    <img review-img class="w-16 h-16 object-cover rounded-full" alt="">
+                    <div class="">
+                        <p review-name class="text-sm font-bold"></p>
+                        <p review-role class="text-xs"></p>
+                    </div>  
+                </div>
+            </div>
+        </template>
+        </section>
+
+        <!-- Horario y contacto -->
+        <section id="horario" class="bg-crema dark:bg-marronoscuro border-cream dark:border-cream transition-all duration-300 ease-out">
+            <div class="max-w-5xl mx-auto px-6 py-16 flex flex-col gap-8 md:flex-row">
+                <div data-aos="fade-up" class="flex-1 p-6 rounded-xl bg-cremaclaro dark:bg-crema border dark:border-amber-900/30 transition-all duration-300 ease-out hover:shadow-md">
+                    <h2 class="font-titulo text-4xl font-bold text-marron dark:text-marronoscuro">Horario</h2>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex justify-between gap-4 border-b border-amber-300 dark:border-amber-900/40 pb-2 dark:text-marron"><span>Lunes a viernes</span><strong class="text-right">7:00 a 14:30 y 17:00 a 20:00</strong></li>
+                        <li class="flex justify-between gap-4 border-b border-amber-300 dark:border-amber-900/40 pb-2 dark:text-marron"><span>Sábados</span><strong>7:30 a 14:30</strong></li>
+                        <li class="flex justify-between gap-4 dark:text-marron"><span>Domingos</span><strong class="text-red-700 dark:text-red-700">CERRADO</strong></li>
+                    </ul>
+                </div>
+
+                <div id="contacto" data-aos="fade-up" data-aos-delay="100" class="flex-1 p-6 rounded-xl bg-amarillo dark:bg-marronclaro dark:bg-[#1F120B] text-amber-50 border dark:border-amber-900/40 transition-all duration-300 ease-out hover:shadow-md">
+                    <h2 class="font-titulo text-4xl font-bold text-marron dark:text-crema">Dónde estamos</h2>
+                    <p class="mt-4 text-marron dark:text-crema">Plaza de la Hornilla, 4<br>Barrio de San José, Madrid</p>
+                    <p class="mt-4 text-2xl font-bold text-marron dark:text-amarillo">914 22 88 10</p>
+                </div>
+            </div>
+
+            
+        </section>
+    </main>
+
+    <footer class="p-4 bg-crema sm:p-6 dark:bg-marronoscuro">
+    <div class="mx-auto max-w-screen-xl">
+        <div class="md:flex md:justify-between">
+            <div class="mb-6 md:mb-0">
+                <a href="https://flowbite.com" class="flex items-center">
+                    <span class="self-center text-4xl font-titulo text-marron dark:text-crema">PanaPaca</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-marron uppercase dark:text-crema">Nosotras</h2>
+                    <ul class="text-marron dark:text-marronclaro">
+                        <li class="mb-4">
+                            <a href="https://flowbite.com" class="hover:underline">Nuestros panes</a>
+                        </li>
+                        <li>
+                            <a href="https://tailwindcss.com/" class="hover:underline">Novedades</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-marron uppercase dark:text-crema">Síguenos</h2>
+                    <ul class="text-marron dark:text-marronclaro">
+                        <li class="mb-4">
+                            <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Tiktok</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-marron uppercase dark:text-crema">Legal</h2>
+                    <ul class="text-marron dark:text-marronclaro">
+                        <li class="mb-4">
+                            <a href="#" class="hover:underline">Política de privacidad</a>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:underline">Términos &amp; Condiciones</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-marron sm:mx-auto dark:border-crema lg:my-8" />
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <span class="text-sm text-marron sm:text-center dark:text-crema">© 2026 <a href="https://flowbite.com" class="hover:underline">PanaPaca™ </a> | Todos los derechos reservados
+            </span>
+            <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                <a href="#" class="text-marron hover:text-amarillo dark:text-crema dark:hover:text-marronclaro">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-marron hover:text-amarillo dark:text-crema dark:hover:text-marronclaro">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-marron hover:text-amarillo dark:text-crema dark:hover:text-marronclaro">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                </a>
+        
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- JS de AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".counter").counterUp({
+                delay: 10,
+                time: 1200
+            });
+        });
+    </script>
+
+    <!-- archivo script.js -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      feather.replace();
+    </script>
+</body>
+</html>
